@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Teches on MU Quiz Project</title>
-    <link>http://MUQuizProject.github.io/tech/</link>
+    <link>http://muquizproject.github.io/tech/</link>
     <description>Recent content in Teches on MU Quiz Project</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Mon, 07 Nov 2016 09:56:37 +0900</lastBuildDate>
     
-	<atom:link href="http://MUQuizProject.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://muquizproject.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>フリバ得点管理アプリQCounterをリリースしました．</title>
-      <link>http://MUQuizProject.github.io/tech/qcounter/</link>
+      <link>http://muquizproject.github.io/tech/qcounter/</link>
       <pubDate>Mon, 07 Nov 2016 09:56:37 +0900</pubDate>
       
-      <guid>http://MUQuizProject.github.io/tech/qcounter/</guid>
+      <guid>http://muquizproject.github.io/tech/qcounter/</guid>
       <description>フリバで得点を管理するためのwebアプリ&amp;rdquo;QCounter&amp;rdquo;をリリースしました．
 QCounter github
 今回はそのきっかけと技術的なお話をします．
@@ -30,10 +30,10 @@ QCounter github
     
     <item>
       <title>TeXを利用してネームプレートを作成する方法について(2): 当日のプレート作成</title>
-      <link>http://MUQuizProject.github.io/tech/python_nameplate/</link>
+      <link>http://muquizproject.github.io/tech/python_nameplate/</link>
       <pubDate>Tue, 22 Mar 2016 03:21:59 +0900</pubDate>
       
-      <guid>http://MUQuizProject.github.io/tech/python_nameplate/</guid>
+      <guid>http://muquizproject.github.io/tech/python_nameplate/</guid>
       <description>前回からのブリッジ （意気揚々と文章を書こうと思っていたら，今年のネームプレートで&amp;rdquo;13th&amp;rdquo;を&amp;rdquo;13rd&amp;rdquo;と書くという凡ミスをしてしまったことが判明して少し凹んでるのですが，書くべきことは書こうということで．）
 前回は，TeXを利用してネームプレートの雛形を作るという話をしました． ここでは，当日どのようにしてネームプレートが作成されるかについて説明します． とくに，pythonやrubyなどのスクリプト言語とテンプレートエンジンを利用した「差し込み印刷用スクリプト」について触れていきたいと思います．
 ネームプレートの作成方法について 大会前から当日までのネームプレートに関する流れについて簡単に述べましょう．
@@ -52,10 +52,10 @@ memberlist = [] with open(&#39;dat/result.csv&#39;,&#39;r&#39;) as f: reader = c
     
     <item>
       <title>TeXを利用してネームプレートを作成する方法について(1): TeXソースの作成</title>
-      <link>http://MUQuizProject.github.io/tech/tex_nameplate/</link>
+      <link>http://muquizproject.github.io/tech/tex_nameplate/</link>
       <pubDate>Mon, 21 Mar 2016 14:17:20 +0900</pubDate>
       
-      <guid>http://MUQuizProject.github.io/tech/tex_nameplate/</guid>
+      <guid>http://muquizproject.github.io/tech/tex_nameplate/</guid>
       <description>始めに abc the eighthから，直近のabc the14thまで，参加者に渡すネームプレートを作成し続けています．（以下，abcの各大会については，&amp;rdquo;8th&amp;rdquo;や&amp;rdquo;14th&amp;rdquo;のように回数のみで表記することとします．） 8thの頃はWordの差し込み印刷機能を利用してネームプレートを作成していましたが，自分の技術的知識が向上したことや，環境の変化などによって，TeXを用いてより効率的なネームプレート作成が可能となりました． ここでは，LaTeXによるネームプレート作成をどのように行っているのかについて，その技術的な詳細を説明します． この記事を読む皆様には，是非他大会などで御参考にして頂ければ幸いです．
 TeX（というよりTikZ）によるネームプレートのデザイン まず，ネームプレートそのものがどういうデザインなのかについては，14thのネームプレートサンプルを以下にリンクしましたので，そちらをご覧ください．なお，以下では，このサンプルの1ページ目のことを「順位面」，2ページ目のことを「名前面」と呼ぶことにします．
 abc14thのネームプレートサンプル

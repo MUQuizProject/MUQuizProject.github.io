@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Qcounter on MU Quiz Project</title>
-    <link>http://MUQuizProject.github.io/tags/qcounter/</link>
+    <link>http://muquizproject.github.io/tags/qcounter/</link>
     <description>Recent content in Qcounter on MU Quiz Project</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Mon, 07 Nov 2016 09:56:37 +0900</lastBuildDate>
     
-	<atom:link href="http://MUQuizProject.github.io/tags/qcounter/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://muquizproject.github.io/tags/qcounter/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>フリバ得点管理アプリQCounterをリリースしました．</title>
-      <link>http://MUQuizProject.github.io/tech/qcounter/</link>
+      <link>http://muquizproject.github.io/tech/qcounter/</link>
       <pubDate>Mon, 07 Nov 2016 09:56:37 +0900</pubDate>
       
-      <guid>http://MUQuizProject.github.io/tech/qcounter/</guid>
+      <guid>http://muquizproject.github.io/tech/qcounter/</guid>
       <description>フリバで得点を管理するためのwebアプリ&amp;rdquo;QCounter&amp;rdquo;をリリースしました．
 QCounter github
 今回はそのきっかけと技術的なお話をします．

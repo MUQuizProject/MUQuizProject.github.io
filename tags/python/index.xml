@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on MU Quiz Project</title>
-    <link>http://MUQuizProject.github.io/tags/python/</link>
+    <link>http://muquizproject.github.io/tags/python/</link>
     <description>Recent content in Python on MU Quiz Project</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Tue, 22 Mar 2016 03:21:59 +0900</lastBuildDate>
     
-	<atom:link href="http://MUQuizProject.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://muquizproject.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TeXを利用してネームプレートを作成する方法について(2): 当日のプレート作成</title>
-      <link>http://MUQuizProject.github.io/tech/python_nameplate/</link>
+      <link>http://muquizproject.github.io/tech/python_nameplate/</link>
       <pubDate>Tue, 22 Mar 2016 03:21:59 +0900</pubDate>
       
-      <guid>http://MUQuizProject.github.io/tech/python_nameplate/</guid>
+      <guid>http://muquizproject.github.io/tech/python_nameplate/</guid>
       <description>前回からのブリッジ （意気揚々と文章を書こうと思っていたら，今年のネームプレートで&amp;rdquo;13th&amp;rdquo;を&amp;rdquo;13rd&amp;rdquo;と書くという凡ミスをしてしまったことが判明して少し凹んでるのですが，書くべきことは書こうということで．）
 前回は，TeXを利用してネームプレートの雛形を作るという話をしました． ここでは，当日どのようにしてネームプレートが作成されるかについて説明します． とくに，pythonやrubyなどのスクリプト言語とテンプレートエンジンを利用した「差し込み印刷用スクリプト」について触れていきたいと思います．
 ネームプレートの作成方法について 大会前から当日までのネームプレートに関する流れについて簡単に述べましょう．
