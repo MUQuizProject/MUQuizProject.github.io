@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tex on MU Quiz Project</title>
+    <link>http://MUQuizProject.github.io/tags/tex/</link>
+    <description>Recent content in Tex on MU Quiz Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Tue, 22 Mar 2016 03:21:59 +0900</lastBuildDate>
+    
+	<atom:link href="http://MUQuizProject.github.io/tags/tex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TeXを利用してネームプレートを作成する方法について(2): 当日のプレート作成</title>
+      <link>http://MUQuizProject.github.io/tech/python_nameplate/</link>
+      <pubDate>Tue, 22 Mar 2016 03:21:59 +0900</pubDate>
+      
+      <guid>http://MUQuizProject.github.io/tech/python_nameplate/</guid>
+      <description>前回からのブリッジ （意気揚々と文章を書こうと思っていたら，今年のネームプレートで&amp;rdquo;13th&amp;rdquo;を&amp;rdquo;13rd&amp;rdquo;と書くという凡ミスをしてしまったことが判明して少し凹んでるのですが，書くべきことは書こうということで．）
+前回は，TeXを利用してネームプレートの雛形を作るという話をしました． ここでは，当日どのようにしてネームプレートが作成されるかについて説明します． とくに，pythonやrubyなどのスクリプト言語とテンプレートエンジンを利用した「差し込み印刷用スクリプト」について触れていきたいと思います．
+ネームプレートの作成方法について 大会前から当日までのネームプレートに関する流れについて簡単に述べましょう．
+ （資材準備会にて）各画用紙に順位面だけを貼り付けておく．名前の面は当日貼り付ける． （ここから当日）マークシートの読取と集計を行う．（ここは私の管轄外で，私は結果のデータをもらうだけです．） 結果のデータを元にして，ネームプレートの名前面の作成を行う． 名前面のpdfをUSBメモリに入れ，コンビニ印刷にて印刷する． できあがった名前面を，（既に順位面だけ貼り付けてある）画用紙に貼り付けて完成．  このうち，3番目の作業がメインになります．前回提示したTeXソースの中では，
+\AssignName{&amp;lt;順位&amp;gt;}{&amp;lt;名前&amp;gt;}{&amp;lt;学校&amp;gt;}{&amp;lt;学年&amp;gt;}  という命令で名前面の割付をするのですが， これを60人分手打ちするのはどう考えても時間が足りないわけです． ですから，これを自動化する「差し込み印刷スクリプト」が必要になります．
+テンプレートエンジンTenjinを利用した差し込み印刷スクリプト どういうことがやりたいかと言うと，例えば，
+11111,西園寺公望,東京大,大3,1,さいおんじきんもち,140 22222,桂太郎,京都大,大4,2,かつらたろう,139  という感じのcsvファイル（左から，エントリーNo.，名前，学校，学年，順位，名前読み，点数）から，
+\AssignName{1}{西園寺公望}{東京大}{大3} \AssignName{2}{桂太郎}{京都大}{大4}  という感じの内容のTeXソースファイルを生成したいわけです． これをやるためのスクリプトなのですが，今回はテンプレートエンジンの一つであるTenjinを利用しました． Tenjinはいくつかの言語で実装されていて， 今回はpython版（pyTenjin）を利用することとしました．
+今回は以下のテンプレートファイルとpythonスクリプトを用意しました． 
+まずテンプレートファイル（nameplate.pytex）について説明します． このファイルは前回のサンプルをベースにしており， Tenjinのテンプレートとしての本質的な部分は以下の部分に集約されます．
+&amp;lt;?py for member in members: ?&amp;gt; \AssignName{${member[&#39;order&#39;]}}{${member[&#39;name&#39;]}}{${member[&#39;school&#39;]}}{${member[&#39;grade&#39;]}} &amp;lt;?py #endfor ?&amp;gt; \end{document}  pyTenjinでは，${...}や&amp;lt;?py ... ?&amp;gt;で囲むことでテンプレート内にpythonのステートメントを導入することができます．（ただし，上のようにfor文を導入する際は，pythonではインデントでブロックを認識するのが基本なので，どこでforブロックが終わるのか識別させるために，&amp;lt;?py #endfor ?&amp;gt;という書き方をします．pyTenjinのマニュアルを参照してください．）
+membersは辞書の配列で，そこから一つずつ辞書を取り出して，\AssignNameの引数として挿入していきます．極めて単純明快なものです．
+このテンプレートの変数membersにデータをバインドさせて，実際に文書を作るのがinsert.pyになります．一部を抜き出します．
+memberlist = [] with open(&#39;dat/result.csv&#39;,&#39;r&#39;) as f: reader = csv.reader(f) for row in reader: mem = { &#39;order&#39;: row[4], &#39;name&#39;: row[1], &#39;school&#39;: row[2], &#39;grade&#39;: row[3], } memberlist.</description>
+    </item>
+    
+    <item>
+      <title>TeXを利用してネームプレートを作成する方法について(1): TeXソースの作成</title>
+      <link>http://MUQuizProject.github.io/tech/tex_nameplate/</link>
+      <pubDate>Mon, 21 Mar 2016 14:17:20 +0900</pubDate>
+      
+      <guid>http://MUQuizProject.github.io/tech/tex_nameplate/</guid>
+      <description>始めに abc the eighthから，直近のabc the14thまで，参加者に渡すネームプレートを作成し続けています．（以下，abcの各大会については，&amp;rdquo;8th&amp;rdquo;や&amp;rdquo;14th&amp;rdquo;のように回数のみで表記することとします．） 8thの頃はWordの差し込み印刷機能を利用してネームプレートを作成していましたが，自分の技術的知識が向上したことや，環境の変化などによって，TeXを用いてより効率的なネームプレート作成が可能となりました． ここでは，LaTeXによるネームプレート作成をどのように行っているのかについて，その技術的な詳細を説明します． この記事を読む皆様には，是非他大会などで御参考にして頂ければ幸いです．
+TeX（というよりTikZ）によるネームプレートのデザイン まず，ネームプレートそのものがどういうデザインなのかについては，14thのネームプレートサンプルを以下にリンクしましたので，そちらをご覧ください．なお，以下では，このサンプルの1ページ目のことを「順位面」，2ページ目のことを「名前面」と呼ぶことにします．
+abc14thのネームプレートサンプル
+これをどのようにしてTeXで書くかということですが，現代的な解答の一つはTikZを用いることだと思います． TikZはTeX用の描画パッケージの一つで，非常に高度な機能を持っています． 例えば，TikZ and PGF examplesを見れば， このパッケージを使ってどこまで綺麗な図が描けるのか，その一旦がすぐにわかると思います． ネームプレートを作成するという点においては，ここまでの描画能力は必ずしも必要ではありませんが， コード自体も書きやすく，後で色々とデザインで「遊べる」ということからしても，TikZは非常に有力だと思っています．
+実際，上のネームプレートを生成するluatexのコードは以下の通りです．
+ \AssignOrder{順位}で順位の面，\AssignName{順位}{名前}{学校}{学年}で名前の面を割付します． ちなみに，
+ 出力エンジンはlualatexを使用．lualatex nameplatex14th_sample.texでpdfが生成されます． フォントは源真ゴシックを使用． 14thのロゴが必要ですが，これは公式サイトのトップにあるものと同じ．  となってますので，このままファイルをダウンロードしてコンパイルするときはご注意下さい．
+簡単なコードの説明 \AssignNameについてだけここでは説明します．
+\newcommand*{\AssignName}[4]{% \rule{0.3cm}{0cm}\\ \vfill \begin{tikzpicture} % デザイン調整用のグリッドです．本番の出力時にはコメントアウトしてください． %\draw [help lines] (0,0) grid (28,20); % 名前・所属教育機関・学年の配置 \node[above right] (order) at (0,18) {\ResizeAsBox{10cm}{1.5cm}{#1}}; \node[above] (name) at (14,7) {\ResizeAsBox{28cm}{10cm}{\textbf{#2}}}; \node[above] (school) at (8,1) {\ResizeAsBox{16cm}{4cm}{#3}}; \node[above] (grade) at (23,1) {\ResizeAsBox{12cm}{4cm}{#4}}; \end{tikzpicture} \vfill \newpage }  tikzpicture環境の内部が実際に「図」として描いている部分になります． tikzにおける\node命令については，tikzのマニュアルやTeX Wiki を参照して頂ければいいのですが，何をしているのかは実際のコードを読んでもすぐにわかると思います． 一つ言えば，aboveやabove rightというオプションは， 参照点(atの後ろにある座標)に対して文字({}の中身)をどこに配置するかを指定します． このオプションを用いると位置指定がしやすいと思います．</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8">
+    <title>TeXを利用してネームプレートを作成する方法について(1): TeXソースの作成 - MU QUIZ Project</title>
+    <link rel="stylesheet" href="http://MUQuizProject.github.io/main.css">
+  </head>
+  <body>
+    <div class="container">
+    <nav>
+      <div class="">
+        <ul>
+          <li><a href="http://MUQuizProject.github.io/">Home</a></li>
+          <li><a href="http://MUQuizProject.github.io/tech/">Technological Matters</a></li>
+          <li><a href="http://MUQuizProject.github.io/project/">Ongoing Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  <main>
+    <article class="">
+      <h1>TeXを利用してネームプレートを作成する方法について(1): TeXソースの作成</h1>
+      
+
+<h2 id="始めに">始めに</h2>
+
+<p>abc the eighthから，直近の<a href="http://abc-dive.com/2016/abc_top.html">abc the14th</a>まで，参加者に渡すネームプレートを作成し続けています．（以下，abcの各大会については，&rdquo;8th&rdquo;や&rdquo;14th&rdquo;のように回数のみで表記することとします．）
+8thの頃はWordの差し込み印刷機能を利用してネームプレートを作成していましたが，自分の技術的知識が向上したことや，環境の変化などによって，TeXを用いてより効率的なネームプレート作成が可能となりました．
+ここでは，LaTeXによるネームプレート作成をどのように行っているのかについて，その技術的な詳細を説明します．
+この記事を読む皆様には，是非他大会などで御参考にして頂ければ幸いです．</p>
+
+<h2 id="tex-というよりtikz-によるネームプレートのデザイン">TeX（というよりTikZ）によるネームプレートのデザイン</h2>
+
+<p>まず，ネームプレートそのものがどういうデザインなのかについては，14thのネームプレートサンプルを以下にリンクしましたので，そちらをご覧ください．なお，以下では，このサンプルの1ページ目のことを「<strong>順位面</strong>」，2ページ目のことを「<strong>名前面</strong>」と呼ぶことにします．</p>
+
+<p><a href="https://www.dropbox.com/s/z3vp28cguhdlkb1/nameplate14th_sample.pdf?dl=0">abc14thのネームプレートサンプル</a></p>
+
+<p>これをどのようにしてTeXで書くかということですが，現代的な解答の一つは<a href="http://pgf.sourceforge.net/">TikZ</a>を用いることだと思います．
+TikZはTeX用の描画パッケージの一つで，非常に高度な機能を持っています．
+例えば，<a href="http://www.texample.net/tikz/examples/">TikZ and PGF examples</a>を見れば，
+このパッケージを使ってどこまで綺麗な図が描けるのか，その一旦がすぐにわかると思います．
+ネームプレートを作成するという点においては，ここまでの描画能力は必ずしも必要ではありませんが，
+コード自体も書きやすく，後で色々とデザインで「遊べる」ということからしても，TikZは非常に有力だと思っています．</p>
+
+<p>実際，上のネームプレートを生成するluatexのコードは以下の通りです．</p>
+
+<script src="https://gist.github.com/MUQuizProject/28a37a611c3e195e3e01.js"></script>
+
+<p><code>\AssignOrder{順位}</code>で順位の面，<code>\AssignName{順位}{名前}{学校}{学年}</code>で名前の面を割付します．
+ちなみに，</p>
+
+<ul>
+<li>出力エンジンは<code>lualatex</code>を使用．<code>lualatex nameplatex14th_sample.tex</code>でpdfが生成されます．</li>
+<li>フォントは<a href="http://jikasei.me/font/genshin/">源真ゴシック</a>を使用．</li>
+<li>14thのロゴが必要ですが，これは<a href="http://abc-dive.com/2016/abc_top.html">公式サイトのトップ</a>にあるものと同じ．</li>
+</ul>
+
+<p>となってますので，このままファイルをダウンロードしてコンパイルするときはご注意下さい．</p>
+
+<h2 id="簡単なコードの説明">簡単なコードの説明</h2>
+
+<p><code>\AssignName</code>についてだけここでは説明します．</p>
+
+<pre><code>\newcommand*{\AssignName}[4]{%
+  \rule{0.3cm}{0cm}\\
+  \vfill
+  \begin{tikzpicture}
+    % デザイン調整用のグリッドです．本番の出力時にはコメントアウトしてください．
+    %\draw [help lines] (0,0) grid (28,20);
+    % 名前・所属教育機関・学年の配置
+    \node[above right] (order) at (0,18) {\ResizeAsBox{10cm}{1.5cm}{#1}};
+    \node[above] (name) at (14,7) {\ResizeAsBox{28cm}{10cm}{\textbf{#2}}};
+    \node[above] (school) at (8,1) {\ResizeAsBox{16cm}{4cm}{#3}};
+    \node[above] (grade) at (23,1) {\ResizeAsBox{12cm}{4cm}{#4}};
+  \end{tikzpicture}
+  \vfill
+  \newpage
+}
+</code></pre>
+
+<p><code>tikzpicture</code>環境の内部が実際に「図」として描いている部分になります．
+tikzにおける<code>\node</code>命令については，tikzのマニュアルや<a href="https://texwiki.texjp.org/?TikZ">TeX Wiki</a>
+を参照して頂ければいいのですが，何をしているのかは実際のコードを読んでもすぐにわかると思います．
+一つ言えば，<code>above</code>や<code>above right</code>というオプションは，
+参照点(<code>at</code>の後ろにある座標)に対して文字(<code>{}</code>の中身)をどこに配置するかを指定します．
+このオプションを用いると位置指定がしやすいと思います．</p>
+
+<p>さて，<code>\AssignName</code>と<code>\AssignOrder</code>の定義中で，<code>\ResizeAsBox{&lt;幅&gt;}{&lt;高さ&gt;}{&lt;文字列&gt;}</code>という命令を別個定義して使用しています．</p>
+
+<pre><code>\newlength{\ResizedHeight}
+\newcommand*{\ResizeAsBox}[3]{%
+  \settoheight{\ResizedHeight}{\resizebox{#1}{!}{#3}}
+  \ifthenelse{ \lengthtest{\ResizedHeight &lt; #2} }{%
+    \resizebox{#1}{#2}{#3}
+  }{
+    \resizebox{!}{#2}{#3}
+  }
+}
+</code></pre>
+
+<p>この命令は，「幅」と「高さ」で指定された長方形の中にピッタリ収まるように「文字列」を拡大して配置するのですが，
+文字を拡大縮小する際に，<strong>縦長になることは許すが，横長になることは許さない</strong> という方針を取っています．
+これは，横長の文字はどうしても不恰好になるためです．
+ですので，<code>\ResizeAsBox</code>の定義内では，</p>
+
+<ul>
+<li>一旦，文字列を指定した幅になるまで<strong>縦横等倍で拡大</strong>する．</li>
+<li>そのときの文字列の高さを長さ変数の<code>\ResizedHeight</code>に定義する．</li>
+<li>これを指定された高さと比較し，
+
+<ul>
+<li>オーバーしていれば高さに合わせて縦横等倍拡大．</li>
+<li>オーバーしていなければ，幅と高さの両方に合わせて不等倍拡大．</li>
+</ul></li>
+</ul>
+
+<p>という計算をしています．</p>
+
+<p>因みにこの条件分岐を実現するため，<a href="https://www.ctan.org/pkg/ifthen">ifthenパッケージ</a>を利用しています．
+これについては，以下のページを参考にしました．</p>
+
+<p><a href="http://qiita.com/zr_tex8r/items/71ae46c9c4e8cb575073">LaTeX で条件分岐や反復処理：ifthen パッケージのキホン</a></p>
+
+<h2 id="多少のこころがけ">多少のこころがけ</h2>
+
+<p>8th以降ネームプレートを作成する際に気をつけていることとして，<strong>デザインを少しずつ変える</strong> というのがあります．
+毎年同じようなデザインにするより，一瞥して「これはあのときのやつだ」と思い出してもらえるようにというのがその心です．
+最近はtwitterやfacebookに，自分のこれまで獲ってきたネームプレートを並べて写真を撮る人達が増えてきました．
+それを見る度に，「ちゃんとデザインを変えておいてよかったな」と思ったりしています．</p>
+
+<p>以前は毎年デザインに凝っていたのですが，
+最近は大会ロゴが毎年作成されるようになったので，
+大会ロゴを貼りつけるだけの簡単な作業で差別化を図ることができています．
+ちなみに上のサンプルファイルを見るとわかると思いますが，
+14thのネームプレートでは，（私が携わって）初めて順位面をカラー印刷にしました．（これまではモノクロでした．）
+こういうところでも少しずつ変化をつけていくようにしてます．</p>
+
+<p>次回はtexファイルをもとに実際のネームプレートを作る作業について説明します．</p>
+
+    </article>
+  </main>
+<footer>
+  Copyright &copy; M Uesaka
+</footer>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book on MU Quiz Project</title>
+    <link>http://MUQuizProject.github.io/tags/book/</link>
+    <description>Recent content in Book on MU Quiz Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Tue, 23 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://MUQuizProject.github.io/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>現在販売中の問題集</title>
+      <link>http://MUQuizProject.github.io/project/books_on_sale/</link>
+      <pubDate>Tue, 23 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://MUQuizProject.github.io/project/books_on_sale/</guid>
+      <description>○○う王2015 2015年11月29日にTQCで行った企画の問題集です．早押し問題625問収録．2016年8月20日より販売を開始します．
+ 対面電書: 対面販売でカードをお持ちの方はこちらから．  プレ早押しチャンピオンシップ2015 2015年4月29日にTQCで行った企画の問題集です．ペーパー100問＋早押し479問収録．2016年8月20日より販売を開始します．
+ 対面電書: 対面販売でカードをお持ちの方はこちらから．  プレ早押しチャンピオンシップ2014 2014年11月29日にTQC(東京大学クイズ研究会)で行った企画の問題集です．ペーパー50問＋早押し489問収録． 次の2つのサイトから購入可能です．
+ DLmarket: Webから購入の方はこちらから． 対面電書：対面販売でカードを御持ちの方はこちらから．  Academic Quiz Trial II 2015年6月28日に開催された,「アカデミッククイズによるクイズ大会」Academic Quiz Trial IIの問題集です． DLmarketから購入可能です．
+Academic Quiz Trial 2014年6月28日に開催された「アカデミッククイズによるクイズ大会」ことAcademic Quiz Trialの問題集です． DLmarketから購入可能です．</description>
+    </item>
+    
+  </channel>
+</rss>

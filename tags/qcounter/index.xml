@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qcounter on MU Quiz Project</title>
+    <link>http://MUQuizProject.github.io/tags/qcounter/</link>
+    <description>Recent content in Qcounter on MU Quiz Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Mon, 07 Nov 2016 09:56:37 +0900</lastBuildDate>
+    
+	<atom:link href="http://MUQuizProject.github.io/tags/qcounter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>フリバ得点管理アプリQCounterをリリースしました．</title>
+      <link>http://MUQuizProject.github.io/tech/qcounter/</link>
+      <pubDate>Mon, 07 Nov 2016 09:56:37 +0900</pubDate>
+      
+      <guid>http://MUQuizProject.github.io/tech/qcounter/</guid>
+      <description>フリバで得点を管理するためのwebアプリ&amp;rdquo;QCounter&amp;rdquo;をリリースしました．
+QCounter github
+今回はそのきっかけと技術的なお話をします．
+得点管理，どうしてますか？ 「フリバ始めます．ルールは7○3×です．」と言われたとき，まず何をしますか？おそらく， メモ帳とペンを取り出す． 財布から小銭を取り出す． トランプを取り出す． 特に何もせず記憶でカウントする．  などの方法を取る人がいると思います．いずれにしても，何らかの道具を持ち出すか，記憶に頼るのが普通です．
+これをスマホで管理できれば便利だと思いました．それがこのwebアプリ開発のきっかけです．
+ただ，単にカウントをするだけのアプリというのはいくつか存在します．だから，同じものを作ったところで単なる二番煎じになってしまいます．そこで，対応できるルールの数を増やすということを考えつきました．
+例えば，abcのルールに10 by 10というのがあります．これをフリバでやろうとすると，点数が掛け算になるので，得点管理がやや面倒です．このアプリを用いると，○と×のボタンを押すことで自動的に計算をしてくれます．また，Configボタンを押すと，誤答ポイントの初期得点を変えることもできます．
+技術的な話について QCounterを作ったのは，Angular2におけるrouterの使い方を勉強するためでした．Angular2は得点表示を作るために用いているのですが，routerは使ったことがなかったので，ちょっとやってみることにしたというところです．Angular2からはCLIが整備されており，ある程度コードを自動生成してくれるので，書く量は大きく減りました．
+今後について このアプリは現在ブラウザからアクセスするという形を取っているのですが，iPhoneやAndroid用アプリのリクエストもありました．ただ，そうすると結構面倒な問題が多いです．アプリ開発の方法を一から学ぶ必要がある上に，審査なども必要になるので，時間的コストに見合わないなという印象を現在受けています．ですので，当分はwebベースということになりそうです．</description>
+    </item>
+    
+  </channel>
+</rss>

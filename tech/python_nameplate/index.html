@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8">
+    <title>TeXを利用してネームプレートを作成する方法について(2): 当日のプレート作成 - MU QUIZ Project</title>
+    <link rel="stylesheet" href="http://MUQuizProject.github.io/main.css">
+  </head>
+  <body>
+    <div class="container">
+    <nav>
+      <div class="">
+        <ul>
+          <li><a href="http://MUQuizProject.github.io/">Home</a></li>
+          <li><a href="http://MUQuizProject.github.io/tech/">Technological Matters</a></li>
+          <li><a href="http://MUQuizProject.github.io/project/">Ongoing Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  <main>
+    <article class="">
+      <h1>TeXを利用してネームプレートを作成する方法について(2): 当日のプレート作成</h1>
+      
+
+<h2 id="前回からのブリッジ">前回からのブリッジ</h2>
+
+<p>（意気揚々と文章を書こうと思っていたら，今年のネームプレートで&rdquo;13th&rdquo;を&rdquo;13rd&rdquo;と書くという凡ミスをしてしまったことが判明して少し凹んでるのですが，書くべきことは書こうということで．）</p>
+
+<p><a href="../tex_nameplate/">前回</a>は，TeXを利用してネームプレートの雛形を作るという話をしました．
+ここでは，当日どのようにしてネームプレートが作成されるかについて説明します．
+とくに，pythonやrubyなどのスクリプト言語とテンプレートエンジンを利用した「差し込み印刷用スクリプト」について触れていきたいと思います．</p>
+
+<h2 id="ネームプレートの作成方法について">ネームプレートの作成方法について</h2>
+
+<p>大会前から当日までのネームプレートに関する流れについて簡単に述べましょう．</p>
+
+<ul>
+<li>（資材準備会にて）各画用紙に順位面だけを貼り付けておく．名前の面は当日貼り付ける．</li>
+<li>（ここから当日）マークシートの読取と集計を行う．（ここは私の管轄外で，私は結果のデータをもらうだけです．）</li>
+<li>結果のデータを元にして，<strong>ネームプレートの名前面の作成を行う．</strong></li>
+<li>名前面のpdfをUSBメモリに入れ，コンビニ印刷にて印刷する．</li>
+<li>できあがった名前面を，（既に順位面だけ貼り付けてある）画用紙に貼り付けて完成．</li>
+</ul>
+
+<p>このうち，3番目の作業がメインになります．<a href="../tex_nameplate/">前回</a>提示したTeXソースの中では，</p>
+
+<pre><code>\AssignName{&lt;順位&gt;}{&lt;名前&gt;}{&lt;学校&gt;}{&lt;学年&gt;}
+</code></pre>
+
+<p>という命令で名前面の割付をするのですが，
+これを60人分手打ちするのはどう考えても時間が足りないわけです．
+ですから，これを自動化する「<strong>差し込み印刷スクリプト</strong>」が必要になります．</p>
+
+<h2 id="テンプレートエンジンtenjinを利用した差し込み印刷スクリプト">テンプレートエンジンTenjinを利用した差し込み印刷スクリプト</h2>
+
+<p>どういうことがやりたいかと言うと，例えば，</p>
+
+<pre><code>11111,西園寺公望,東京大,大3,1,さいおんじきんもち,140
+22222,桂太郎,京都大,大4,2,かつらたろう,139
+</code></pre>
+
+<p>という感じのcsvファイル（左から，エントリーNo.，名前，学校，学年，順位，名前読み，点数）から，</p>
+
+<pre><code>\AssignName{1}{西園寺公望}{東京大}{大3}
+\AssignName{2}{桂太郎}{京都大}{大4}
+</code></pre>
+
+<p>という感じの内容のTeXソースファイルを生成したいわけです．
+これをやるためのスクリプトなのですが，今回はテンプレートエンジンの一つである<a href="http://www.kuwata-lab.com/tenjin/">Tenjin</a>を利用しました．
+Tenjinはいくつかの言語で実装されていて，
+今回はpython版（<a href="http://www.kuwata-lab.com/tenjin/pytenjin-users-guide.html">pyTenjin</a>）を利用することとしました．</p>
+
+<p>今回は以下のテンプレートファイルとpythonスクリプトを用意しました．
+<script src="https://gist.github.com/MUQuizProject/94035afca67d9290e4e1.js"></script></p>
+
+<p>まずテンプレートファイル（<code>nameplate.pytex</code>）について説明します．
+このファイルは<a href="../tex_nameplate/">前回</a>のサンプルをベースにしており，
+Tenjinのテンプレートとしての本質的な部分は以下の部分に集約されます．</p>
+
+<pre><code class="language-\begin{document}">&lt;?py for member in members: ?&gt;
+\AssignName{${member['order']}}{${member['name']}}{${member['school']}}{${member['grade']}}
+&lt;?py #endfor ?&gt;
+\end{document}
+</code></pre>
+
+<p>pyTenjinでは，<code>${...}</code>や<code>&lt;?py ... ?&gt;</code>で囲むことでテンプレート内にpythonのステートメントを導入することができます．（ただし，上のように<code>for</code>文を導入する際は，pythonではインデントでブロックを認識するのが基本なので，どこで<code>for</code>ブロックが終わるのか識別させるために，<code>&lt;?py #endfor ?&gt;</code>という書き方をします．<a href="http://www.kuwata-lab.com/tenjin/pytenjin-users-guide.html">pyTenjin</a>のマニュアルを参照してください．）</p>
+
+<p><code>members</code>は辞書の配列で，そこから一つずつ辞書を取り出して，<code>\AssignName</code>の引数として挿入していきます．極めて単純明快なものです．</p>
+
+<p>このテンプレートの変数<code>members</code>にデータをバインドさせて，実際に文書を作るのが<code>insert.py</code>になります．一部を抜き出します．</p>
+
+<pre><code>memberlist = []
+with open('dat/result.csv','r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        mem = {
+			'order': row[4],
+            'name': row[1],
+            'school': row[2],
+            'grade': row[3],
+        }
+        memberlist.append(mem)
+
+print(memberlist)
+
+context = {
+    'members': memberlist
+}
+
+engine = tenjin.Engine(path=['template'])
+tex = engine.render('nameplate.pytex',context)
+
+with open('src/nameplate.tex','w') as f:
+    f.write(tex)
+</code></pre>
+
+<p>冒頭に挙げたタイプのcsvファイルからデータを読み取り，これを辞書の配列（<code>memberlist</code>）にして，
+それを<code>nameplate.pytex</code>の<code>members</code>にバインドさせるのが，<code>engine.render(...)</code>という部分です．
+ここもあまり工夫はせず，素直なプログラムの積み重ねになってます．</p>
+
+<h2 id="汎用性の高い-差し込み印刷スクリプト">汎用性の高い「差し込み印刷スクリプト」</h2>
+
+<p>賢明な読者の方なら，このスクリプトはネームプレートを作るだけのものではないと思われるでしょう．
+実際，<strong>これとほぼ同じようなスクリプトを，敗者復活の問題用紙作成にも用いています．</strong> 実際のところ，この問題用紙作成の方がこのスクリプトの有用性は高いです．というのも，今回の場合668人の問題用紙を作成する必要があるからです．</p>
+
+<p>さらに言うと，今回は用いませんでしたが，このスクリプトは<strong>150問4択ペーパーの問題用紙作成</strong>にも使えます．
+問題のデータをcsvにして，texで雛形を作って，同じようにスクリプトとテンプレートを作って流しこめばいいのです．実際，昨年開催された「あにわん!」では，このようにして問題用紙を作成しました．ただしこの場合，「1ページを25問に収める」などの調整が必要なので，できたtexファイルに微調整をする必要があります．しかし，その手間があるからと言って，差し込み印刷スクリプトの有用性が無くなるわけではありません．</p>
+
+<h2 id="最後に-ネームプレート今昔">最後に: ネームプレート今昔</h2>
+
+<p>本格的にabcのネームプレート作成に関わったのは8thのときでしたが，7thのときもお手伝いをしました．
+その頃は参加者が増加している真っ最中で，しかしながら事前エントリーもないという状況でした．
+ですので，「参加しそうな参加者の名前面を事前に全部作成しておき，当日追加分はその場で印刷」という手法を取りました．
+さらにそのときは諸事情あって全部手入力で行ってました．</p>
+
+<p>そのあと，事前エントリーが導入されたことでtexを使った事前処理が可能になりました．
+しかしそれでも，「全参加者の名前面を事前作成する」ということをずっと続けていて，1回の大会の度にKinko&rsquo;sでひたすら印刷作業をするのが恒例になっていました．
+ただ，当たり前ですが，この名前面のうち使用するのは48枚のみなので，90%以上の紙は無駄になってしまいます．
+それを改善するため，13thから現在の仕組みを導入しています．</p>
+
+<p>考えてみれば，もっと早くから導入していい仕組みだったと思うのですが，
+どうしてもその仕組みを導入するための初期コストとか，
+成功するかどうかの不安などがあって，なかなか一歩が踏み出せませんでした．</p>
+
+<p>こういう仕組みを導入するためには，「楽をするにはどうすればいいか」ということを必死になって考えることが重要だと個人的に思います．
+私の場合，「コツコツやる」ということが非常に苦手な人間なので，面倒を回避するためにどういう初期投資をすればよいかをまず考えています．特にabcは規模が大きい大会ですから，今後こういう考え方がますます重要になるのではないかと思います．</p>
+
+    </article>
+  </main>
+<footer>
+  Copyright &copy; M Uesaka
+</footer>
+</div>
+</body>
+</html>
+
