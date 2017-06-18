@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on MU Quiz Project</title>
-    <link>http://muquizproject.github.io/categories/</link>
+    <link>https://muquizproject.github.io/categories/</link>
     <description>Recent content in Categories on MU Quiz Project</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     
-	<atom:link href="http://muquizproject.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://muquizproject.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Memo</title>
-      <link>http://muquizproject.github.io/categories/memo/</link>
+      <link>https://muquizproject.github.io/categories/memo/</link>
       <pubDate>Mon, 07 Nov 2016 09:56:37 +0900</pubDate>
       
-      <guid>http://muquizproject.github.io/categories/memo/</guid>
+      <guid>https://muquizproject.github.io/categories/memo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Policy</title>
-      <link>http://muquizproject.github.io/categories/policy/</link>
+      <link>https://muquizproject.github.io/categories/policy/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://muquizproject.github.io/categories/policy/</guid>
+      <guid>https://muquizproject.github.io/categories/policy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Product</title>
-      <link>http://muquizproject.github.io/categories/product/</link>
+      <link>https://muquizproject.github.io/categories/product/</link>
       <pubDate>Tue, 10 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://muquizproject.github.io/categories/product/</guid>
+      <guid>https://muquizproject.github.io/categories/product/</guid>
       <description></description>
     </item>
     

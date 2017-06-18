@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MU Quiz Project</title>
-    <link>http://muquizproject.github.io/</link>
+    <link>https://muquizproject.github.io/</link>
     <description>Recent content on MU Quiz Project</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Thu, 01 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://muquizproject.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://muquizproject.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MU Quiz Projectの大会運営方針について</title>
-      <link>http://muquizproject.github.io/project/overall_policy/</link>
+      <link>https://muquizproject.github.io/project/overall_policy/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://muquizproject.github.io/project/overall_policy/</guid>
+      <guid>https://muquizproject.github.io/project/overall_policy/</guid>
       <description>この&amp;rdquo;MU Quiz Project&amp;rdquo;は，管理者であるウエサカが主催する大会を統合するものとして設置されたプロジェクトです．今後，管理者が主催する大会については，すべて&amp;rdquo;MU Quiz Project&amp;rdquo;の主催であるという方針のもと，一心精進さんを始め告知・宣伝をしていくことになっております．
 つきましては，このプロジェクト全体を通じての大会運営方針について，ここでご説明致しますとともに，そうした方針を取る背景についてもお話したいと思います．
 「サンドボックス」としてのプロジェクト 一口に「クイズ」と言っても，様々なタイプのクイズがあります．「クイズ」というものをやっている人たちは必ずしも一枚岩なのではなく，各々が考える「クイズ」像というものはかなり違うものだと想像します．そして，そうした様々な「クイズ」が，歴史は浅いものの，今日まで並行して発展してきたことは言うまでもない事実ですし，これからも色々なタイプの「クイズ」は現れてくると思われます．これは言ってみれば「クイズの多様性」です．
@@ -33,10 +33,10 @@ Bestを目指すのではなく，Betterの積み重ね このプロジェクト
     
     <item>
       <title>個人情報の取扱いに関するポリシー</title>
-      <link>http://muquizproject.github.io/project/privacy_policy/</link>
+      <link>https://muquizproject.github.io/project/privacy_policy/</link>
       <pubDate>Thu, 01 Jun 2017 01:23:35 +0900</pubDate>
       
-      <guid>http://muquizproject.github.io/project/privacy_policy/</guid>
+      <guid>https://muquizproject.github.io/project/privacy_policy/</guid>
       <description>ここでは，MU Quiz Projectの主催する大会・イベントにおける個人情報の取扱いについて説明致します．以下のプライバシーポリシーは，MU Quiz Projectが主催するすべての大会やイベントにおいて適用されるものであり，各大会でのプライバシーポリシーについては，各大会のウェブサイトからこのページを参照することにより表明致します．
 このページを書くにあたり，クイズスケジュール管理&amp;amp;結果報道サイト「新・一心精進」の，「各大会開催時のプライバシーポリシー雛形例」を参考にさせていただきました．
 プライバシーポリシー MU Quiz Projectは、クイズ大会の参加者の個人情報を保護するため、以下の基本方針を定め、これを遵守します。
@@ -57,19 +57,19 @@ MU Quiz Projectは個人情報の第三者提供について、以下のいず�
     
     <item>
       <title>現在進行中のプロジェクト</title>
-      <link>http://muquizproject.github.io/project/ongoing_project/</link>
+      <link>https://muquizproject.github.io/project/ongoing_project/</link>
       <pubDate>Tue, 10 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://muquizproject.github.io/project/ongoing_project/</guid>
+      <guid>https://muquizproject.github.io/project/ongoing_project/</guid>
       <description>Riverside Quiz Festa in Asahikawa  開催日 2017-07-16(Sun) スケジュール 10:00 OPEN／11:00 START／19:00 END(予定) 会場 北海道旭川市(会場未定) 参加費・見学費 高校生以下0円/大学生500円/一般1000円 コンセプト 道内と道外のクイズプレーヤーの交流を目指すイベントです．当日チームを組む団体戦になります． website http://portal.muqproject.com/rsqf/  QUIKnowledge  開催日 2016-12-17(Sat) スケジュール 10:00 OPEN／11:00 START／19:00 END(予定) 会場 小松川区民館(総武線平井駅徒歩10分) 参加費・見学費 500円 コンセプト 知識勝負のシンプルな早押しクイズの大会です． website http://portal.muqproject.com/qk/  </description>
     </item>
     
     <item>
       <title>フリバ得点管理アプリQCounterをリリースしました．</title>
-      <link>http://muquizproject.github.io/tech/qcounter/</link>
+      <link>https://muquizproject.github.io/tech/qcounter/</link>
       <pubDate>Mon, 07 Nov 2016 09:56:37 +0900</pubDate>
       
-      <guid>http://muquizproject.github.io/tech/qcounter/</guid>
+      <guid>https://muquizproject.github.io/tech/qcounter/</guid>
       <description>フリバで得点を管理するためのwebアプリ&amp;rdquo;QCounter&amp;rdquo;をリリースしました．
 QCounter github
 今回はそのきっかけと技術的なお話をします．
@@ -83,10 +83,10 @@ QCounter github
     
     <item>
       <title>現在販売中の問題集</title>
-      <link>http://muquizproject.github.io/project/books_on_sale/</link>
+      <link>https://muquizproject.github.io/project/books_on_sale/</link>
       <pubDate>Tue, 23 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://muquizproject.github.io/project/books_on_sale/</guid>
+      <guid>https://muquizproject.github.io/project/books_on_sale/</guid>
       <description>○○う王2015 2015年11月29日にTQCで行った企画の問題集です．早押し問題625問収録．2016年8月20日より販売を開始します．
  対面電書: 対面販売でカードをお持ちの方はこちらから．  プレ早押しチャンピオンシップ2015 2015年4月29日にTQCで行った企画の問題集です．ペーパー100問＋早押し479問収録．2016年8月20日より販売を開始します．
  対面電書: 対面販売でカードをお持ちの方はこちらから．  プレ早押しチャンピオンシップ2014 2014年11月29日にTQC(東京大学クイズ研究会)で行った企画の問題集です．ペーパー50問＋早押し489問収録． 次の2つのサイトから購入可能です．
@@ -96,10 +96,10 @@ Academic Quiz Trial 2014年6月28日に開催された「アカデミックク�
     
     <item>
       <title>TeXを利用してネームプレートを作成する方法について(2): 当日のプレート作成</title>
-      <link>http://muquizproject.github.io/tech/python_nameplate/</link>
+      <link>https://muquizproject.github.io/tech/python_nameplate/</link>
       <pubDate>Tue, 22 Mar 2016 03:21:59 +0900</pubDate>
       
-      <guid>http://muquizproject.github.io/tech/python_nameplate/</guid>
+      <guid>https://muquizproject.github.io/tech/python_nameplate/</guid>
       <description>前回からのブリッジ （意気揚々と文章を書こうと思っていたら，今年のネームプレートで&amp;rdquo;13th&amp;rdquo;を&amp;rdquo;13rd&amp;rdquo;と書くという凡ミスをしてしまったことが判明して少し凹んでるのですが，書くべきことは書こうということで．）
 前回は，TeXを利用してネームプレートの雛形を作るという話をしました． ここでは，当日どのようにしてネームプレートが作成されるかについて説明します． とくに，pythonやrubyなどのスクリプト言語とテンプレートエンジンを利用した「差し込み印刷用スクリプト」について触れていきたいと思います．
 ネームプレートの作成方法について 大会前から当日までのネームプレートに関する流れについて簡単に述べましょう．
@@ -118,10 +118,10 @@ memberlist = [] with open(&#39;dat/result.csv&#39;,&#39;r&#39;) as f: reader = c
     
     <item>
       <title>TeXを利用してネームプレートを作成する方法について(1): TeXソースの作成</title>
-      <link>http://muquizproject.github.io/tech/tex_nameplate/</link>
+      <link>https://muquizproject.github.io/tech/tex_nameplate/</link>
       <pubDate>Mon, 21 Mar 2016 14:17:20 +0900</pubDate>
       
-      <guid>http://muquizproject.github.io/tech/tex_nameplate/</guid>
+      <guid>https://muquizproject.github.io/tech/tex_nameplate/</guid>
       <description>始めに abc the eighthから，直近のabc the14thまで，参加者に渡すネームプレートを作成し続けています．（以下，abcの各大会については，&amp;rdquo;8th&amp;rdquo;や&amp;rdquo;14th&amp;rdquo;のように回数のみで表記することとします．） 8thの頃はWordの差し込み印刷機能を利用してネームプレートを作成していましたが，自分の技術的知識が向上したことや，環境の変化などによって，TeXを用いてより効率的なネームプレート作成が可能となりました． ここでは，LaTeXによるネームプレート作成をどのように行っているのかについて，その技術的な詳細を説明します． この記事を読む皆様には，是非他大会などで御参考にして頂ければ幸いです．
 TeX（というよりTikZ）によるネームプレートのデザイン まず，ネームプレートそのものがどういうデザインなのかについては，14thのネームプレートサンプルを以下にリンクしましたので，そちらをご覧ください．なお，以下では，このサンプルの1ページ目のことを「順位面」，2ページ目のことを「名前面」と呼ぶことにします．
 abc14thのネームプレートサンプル
@@ -135,10 +135,10 @@ abc14thのネームプレートサンプル
     
     <item>
       <title>技術的情報</title>
-      <link>http://muquizproject.github.io/tech_info/</link>
+      <link>https://muquizproject.github.io/tech_info/</link>
       <pubDate>Thu, 07 Jan 2016 18:30:20 +0900</pubDate>
       
-      <guid>http://muquizproject.github.io/tech_info/</guid>
+      <guid>https://muquizproject.github.io/tech_info/</guid>
       <description> クイズに絡む技術的な情報に関するメモです．
 TODO  AngularJSを用いた得点表示プログラム TeXによる問題集作成のプロセス  </description>
     </item>
