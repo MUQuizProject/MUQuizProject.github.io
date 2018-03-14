@@ -13,16 +13,6 @@
   </url>
   
   <url>
-    <loc>https://muquizproject.github.io/project/ongoing_project/</loc>
-    <lastmod>2017-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://muquizproject.github.io/tech/qcounter/</loc>
-    <lastmod>2016-11-07T09:56:37+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://muquizproject.github.io/project/books_on_sale/</loc>
     <lastmod>2016-08-23T00:00:00+00:00</lastmod>
   </url>
@@ -49,12 +39,6 @@
   </url>
   
   <url>
-    <loc>https://muquizproject.github.io/tags/angular2/</loc>
-    <lastmod>2016-11-07T09:56:37+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://muquizproject.github.io/tags/book/</loc>
     <lastmod>2016-08-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -72,12 +56,6 @@
   </url>
   
   <url>
-    <loc>https://muquizproject.github.io/tags/firebase/</loc>
-    <lastmod>2016-11-07T09:56:37+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://muquizproject.github.io/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -85,7 +63,7 @@
   
   <url>
     <loc>https://muquizproject.github.io/categories/memo/</loc>
-    <lastmod>2016-11-07T09:56:37+09:00</lastmod>
+    <lastmod>2016-03-22T03:21:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -97,7 +75,7 @@
   
   <url>
     <loc>https://muquizproject.github.io/categories/product/</loc>
-    <lastmod>2017-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2016-08-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -114,12 +92,6 @@
   </url>
   
   <url>
-    <loc>https://muquizproject.github.io/tags/qcounter/</loc>
-    <lastmod>2016-11-07T09:56:37+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://muquizproject.github.io/tags/</loc>
     <lastmod>2016-03-22T03:21:59+09:00</lastmod>
     <priority>0</priority>
@@ -127,13 +99,13 @@
   
   <url>
     <loc>https://muquizproject.github.io/tech/</loc>
-    <lastmod>2016-11-07T09:56:37+09:00</lastmod>
+    <lastmod>2016-03-22T03:21:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://muquizproject.github.io/tags/technology/</loc>
-    <lastmod>2016-11-07T09:56:37+09:00</lastmod>
+    <lastmod>2016-03-22T03:21:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
