@@ -6,10 +6,20 @@
     <description>Recent content in Product on MU Quiz Project</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 23 Aug 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Mar 2018 01:18:41 +0900</lastBuildDate>
     
 	<atom:link href="https://muquizproject.github.io/categories/product/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>現在進行中のプロジェクト</title>
+      <link>https://muquizproject.github.io/project/ongoing_project/</link>
+      <pubDate>Thu, 15 Mar 2018 01:18:41 +0900</pubDate>
+      
+      <guid>https://muquizproject.github.io/project/ongoing_project/</guid>
+      <description>本サイトでは以下の3つの大会が進行中です．
+Riverside Quiz Festa in Asahikawa  開催日 2018-07-28(土)(予定) スケジュール 10:00 OPEN／11:00 START／19:00 END(予定) 会場 北海道旭川市(会場未定) 参加費・見学費 高校生以下0円/大学生500円/一般1000円 コンセプト 道内と道外のクイズプレーヤーの交流を目指すイベントです．当日チームを組む団体戦になります． website http://portal.muqproject.com/rsqf/  QUIKnowledge  開催日 2018年12月予定 スケジュール 10:00 OPEN／11:00 START／19:00 END(予定) 会場 未定 参加費・見学費 未定 コンセプト 知識勝負のシンプルな早押しクイズの大会です． website http://portal.muqproject.com/qk/  Hybrid  開催日 2019年2月予定 スケジュール 10:00 OPEN／11:00 START／19:00 END(予定) 会場 未定 参加費・見学費 未定 コンセプト 2人の個性がぶつかり合う！&#34;Hybrid&#34;な問題群による早押しクイズトーナメント website http://portal.muqproject.com/hybrid/  </description>
+    </item>
     
     <item>
       <title>現在販売中の問題集</title>
